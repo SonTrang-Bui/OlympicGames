@@ -4,4 +4,5 @@ This project employs SQL queries in a PostgreSQL database to conduct the analysi
 ## Data
 * 120 years of Olympic history: athletes and results: https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results
 ## Entity Relationship Diagram
-![image](https://github.com/SonTrang-Bui/OlympicGames/assets/112835552/0fab3116-5fb1-4e4f-a4dd-cd98fcd581c6)
+![image](https://github.com/SonTrang-Bui/OlympicGames/assets/112835552/7ba2b03d-31b1-4d5e-9a81-78c0e6126f2e)
+

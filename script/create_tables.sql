@@ -28,7 +28,7 @@ CREATE TABLE olympic.athlete_events (
 	height               NUMERIC,
 	weight               NUMERIC,
 	team                 VARCHAR(50),
-	noc                  VARCHAR(3) REFERENCES olympic.noc_region (noc),
+	noc                  VARCHAR(3),
 	games                TEXT,
 	year                 SMALLINT,
 	season               VARCHAR(10),
@@ -44,4 +44,12 @@ COPY olympic.athlete_events (athlete_id, name, sex, age, height, weight, team, n
 FROM '\data\athlete_events.csv'
 WITH DELIMITER ',' HEADER CSV QUOTE '"' NULL 'NA';
 
+-- Remove inconsistencies between two tables
+UPDATE olympic.athlete_events
+SET noc = 'SIN'
+WHERE noc = 'SNG';
+
+-- Add foreign key
+ALTER TABLE olympic.athlete_events
+ADD CONSTRAINT fk_noc FOREIGN KEY (noc) REFERENCES olympic.noc_region (noc);
 
